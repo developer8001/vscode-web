@@ -1,0 +1,127 @@
+/* 기본 스타일 및 VS Code 테마 색상 변수 정의 */
+:root {
+  --vscode-bg: #1e1e1e;
+  --sidebar-bg: #252526;
+  --activity-bar-bg: #333333;
+  --status-bar-bg: #007acc;
+  --editor-bg: #1e1e1e;
+  --panel-bg: #1e1e1e;
+  --text-color: #cccccc;
+  --border-color: #3c3c3c;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--vscode-bg);
+  color: var(--text-color);
+  overflow: hidden; /* 전체 페이지 스크롤 방지 */
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-layout {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+/* 1. Activity Bar */
+.activity-bar {
+  width: 50px;
+  background-color: var(--activity-bar-bg);
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.activity-bar-button {
+  background: none;
+  border: none;
+  color: #a0a0a0;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+  width: 100%;
+}
+
+.activity-bar-button.active,
+.activity-bar-button:hover {
+  color: #ffffff;
+}
+
+/* 2. Sidebar */
+.sidebar {
+  width: 280px;
+  background-color: var(--sidebar-bg);
+  padding: 10px;
+  overflow-y: auto;
+  border-right: 1px solid var(--border-color);
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  font-size: 14px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-item {
+  cursor: pointer;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+}
+
+.file-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 3. Main Content (Editor & Panel) */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.editor-pane {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.panel-pane {
+  height: 300px; /* 터미널 높이 */
+  flex-shrink: 0;
+  border-top: 1px solid var(--border-color);
+}
+
+/* 4. Status Bar */
+.status-bar {
+  height: 24px;
+  background-color: var(--status-bar-bg);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  font-size: 12px;
+  flex-shrink: 0;
+}
